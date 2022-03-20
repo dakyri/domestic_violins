@@ -1,0 +1,791 @@
+File:    0	"/OutLand/source/DViol/Sources/Pfft.cpp"
+File:    1	"/OutLand/source/DViol/Sources/DomesticViolin.cpp"
+File:    2	"/OutLand/source/DViol/Sources/Mangler.cpp"
+File:    3	"/OutLand/source/DViol/Sources/SpecFilter.cpp"
+File:    4	"/OutLand/source/DViol/Sources/Averager.cpp"
+File:    6	"/OutLand/source/DViol/Sources/Analyser.cpp"
+File:    7	"/OutLand/source/DViol/Sources/SpecDisplay.cpp"
+File:    8	"/OutLand/source/DViol/Sources/SpecBufQueue.cpp"
+File:    9	"/OutLand/source/DViol/Sources/SmallComfort.cpp"
+File:   10	"/OutLand/source/DViol/Sources/Shample.cpp"
+File:   11	"/OutLand/source/DViol/Sources/ShamInstr.cpp"
+File:   12	"/OutLand/source/DViol/Sources/Audio.cpp"
+File:   13	"/OutLand/source/DViol/Sources/KitchenView.cpp"
+File:   14	"libmoto.o"
+File:   15	"libbe.so"
+File:   18	"/be/rel/src/kit/runtime/global_destructor_chain.c"
+File:   19	"/be/rel/src/kit/runtime/init_term.c"
+File:   21	"/be/rel/src/kit/runtime/runtime.c"
+File:   23	"/be/rel/src/kit/kernel/start_dyn.c"
+
+Code section, size = 28176 bytes
+000000	PR 	.__sinit									file = "*Linker-Generated*"
+00001C	PR 	.__ct__4PfftFid								file = "Pfft.cpp"
+0001E4	PR 	.__dt__4PfftFv
+000268	PR 	.permute__4PfftFi
+0002A4	PR 	.forward__4PfftFPdPdPd
+000424	PR 	.reverse__4PfftFPdPdPd
+000560	PR 	.tospec__4PfftFPdPdPdPd
+000670	PR 	.fromspec__4PfftFPdPdPdPd
+000788	PR 	.main										file = "DomesticViolin.cpp"
+000820	PR 	.randint__Fii
+0008C0	PR 	.__ct__14DomesticViolinFv
+000F10	PR 	.QuitRequested__14DomesticViolinFv
+000F18	PR 	.Pulse__14DomesticViolinFv
+001244	PR 	.RateFilters__14DomesticViolinFv
+001340	PR 	.NextGenFilters__14DomesticViolinFv
+001610	PR 	.RefsReceived__14DomesticViolinFP8BMessa
+001614	PR 	.MessageReceived__14DomesticViolinFP8BMe
+0018AC	PR 	.__dt__14DomesticViolinFv
+001A24	PR 	.__ct__7ManglerFP4PfftP12SpecBufQueue		file = "Mangler.cpp"
+001BE4	PR 	.__cl__7ManglerFP11AudioSignal
+001E18	PR 	.__ct__10SpecFilterFi						file = "SpecFilter.cpp"
+001E4C	PR 	.__dt__10SpecFilterFv
+001E94	PR 	.Apply__10SpecFilterFPdPd
+001EF8	PR 	.Adapt__10SpecFilterFP10SpecFilter
+001FAC	PR 	.__ct__8AveragerFi							file = "Averager.cpp"
+0020F8	PR 	.__dt__8AveragerFv
+0021BC	PR 	.Process__8AveragerFv
+0022F4	PR 	.AddToQueue__8AveragerFPdPdPdPd
+002394	PR 	.__ct__8AnalyserFP4PfftP5BView5BRect5BRe																					file = "Analyser.cpp"
+0027D4	PR 	.DrawOut__8AnalyserFv
+00282C	PR 	.__dt__8AnalyserFv
+002938	PR 	.__vc__8AnalyserFP11AudioSignal
+002B08	PR 	.__ct__11SpecDisplayF5BRectliPdiPdff		file = "SpecDisplay.cpp"
+002C60	PR 	.Draw__11SpecDisplayF5BRect
+002F40	PR 	.Draw__11SpecDisplayFv
+002F98	PR 	.__dt__11SpecDisplayFv
+003004	PR 	.__ct__12SpecBufQueueFi						file = "SpecBufQueue.cpp"
+003094	PR 	.AddToQueue__12SpecBufQueueFPdPdPdPd
+00321C	PR 	.__dt__12SpecBufQueueFv
+003284	PR 	.TakeFromQueue__12SpecBufQueueFPdPdPdPd
+0033C4	PR 	.__ct__12SmallComfortFv						file = "SmallComfort.cpp"
+00347C	PR 	.__dt__12SmallComfortFv
+00357C	PR 	.__cl__12SmallComfortFP11AudioSignal
+00375C	PR 	.__vc__12SmallComfortFP11AudioSignal
+0038A0	PR 	.SetInstr__12SmallComfortFP9ShamInstr
+0038C8	PR 	.StopRecord__12SmallComfortFv
+003B5C	PR 	.StartPlay__12SmallComfortFv
+003BC8	PR 	.@4@__vc__12SmallComfortFP11AudioSignal
+003BD0	PR 	.__ct__7ShampleFPslsPc						file = "Shample.cpp"
+003D40	PR 	.SetWaveData__7ShampleFPsll
+003DE0	PR 	.__dt__7ShampleFv
+003E40	PR 	.Play__7ShampleFsP11AudioSignal
+003F78	PR 	.Reset__7ShampleFv
+003F84	PR 	.Read__7ShampleFP5BFile
+0040A8	PR 	.__ct__9ShamInstrFPc						file = "ShamInstr.cpp"
+004140	PR 	.Play__9ShamInstrFsP11AudioSignal
+0041D0	PR 	.AddShample__9ShamInstrFP7Shample
+0041F0	PR 	.DeleteShample__9ShamInstrFs
+00423C	PR 	.Reset__9ShamInstrFv
+0042D8	PR 	.Read__9ShamInstrFP5BFile
+0043B4	PR 	.__ct__8AudioOutFR15SignalGenerator			file = "Audio.cpp"
+0044D0	PR 	.__dt__8AudioOutFv
+00453C	PR 	.Stop__8AudioOutFv
+00456C	PR 	.Comp__8AudioOutFPvl
+0045A4	PR 	.Stream__8AudioOutFPvPcl
+004768	PR 	.__ct__7AudioInFR14SignalReceiver
+00486C	PR 	.__dt__7AudioInFv
+0048D8	PR 	.Comp__7AudioInFPvl
+004910	PR 	.Stream__7AudioInFPvPcl
+0049E0	PR 	.Stop__7AudioInFv
+004A10	PR 	.__ct__13KitchenWindowF5BRectPCcUl			file = "KitchenView.cpp"
+004A84	PR 	.QuitRequested__13KitchenWindowFv
+004AC0	PR 	.__ct__12BackYardViewF5BRectPc
+004C48	PR 	.QuitRequested__12BackYardViewFv
+004C7C	PR 	.MessageReceived__12BackYardViewFP8BMess
+004C80	PR 	.Draw__12BackYardViewF5BRect
+004C84	PR 	.__dt__12BackYardViewFv
+004CF0	PR 	.__dt__13KitchenWindowFv
+004D5C	PR 	.atan2.8									file = "libmoto.o"
+005490	PR 	.memmove.30
+006070	PR 	.sqrt.78
+006274	PR 	.sin.116
+006434	PR 	.__destroy_global_chain						file = "global_destructor_chain.c"
+006488	PR 	.__RTOC										file = "init_term.c"
+006490	PR 	._init_routine_
+0064E0	PR 	._term_routine_
+006510	PR 	.__start									file = "start_dyn.c"
+0065B0	GL 	.__register_fragment						file = "*Linker-Generated*"
+0065C8	GL 	.find_thread
+0065E0	GL 	.getenv
+0065F8	GL 	.mcheck
+006610	GL 	.__nw__FUl
+006628	GL 	.__ct__12BApplicationFUl
+006640	GL 	.fprintf
+006658	GL 	.acquire_sem
+006670	GL 	.release_sem
+006688	GL 	.malloc
+0066A0	GL 	.free
+0066B8	GL 	.delete_sem
+0066D0	GL 	.__dl__FPv
+0066E8	GL 	.__dt__12BApplicationFv
+006700	GL 	.SetPulseRate__12BApplicationFd
+006718	GL 	.HasRef__8BMessageFPCcl
+006730	GL 	.__ct__5BFileFv
+006748	GL 	.CloseFilePanel__12BApplicationFv
+006760	GL 	.FindRef__8BMessageFPCcl
+006778	GL 	.SetRef__6BStoreF10record_ref
+006790	GL 	.Size__5BFileFv
+0067A8	GL 	.Seek__5BFileFll
+0067C0	GL 	.strcpy
+0067D8	GL 	.Read__5BFileFPvl
+0067F0	GL 	.create_area
+006808	GL 	.exit
+006820	GL 	.__nw__8BMessageFUl
+006838	GL 	.__ct__8BMessageFUl
+006850	GL 	.RunFilePanel__12BApplicationFPCcPCcPCcU
+006868	GL 	.MessageReceived__8BHandlerFP8BMessage
+006880	GL 	.clock
+006898	GL 	.Lock__7BLooperFv
+0068B0	GL 	.Unlock__7BLooperFv
+0068C8	GL 	.rand
+0068E0	GL 	.get_area_info
+0068F8	GL 	.sprintf
+006910	GL 	.delete_area
+006928	GL 	.setbuf
+006940	GL 	.fopen
+006958	GL 	.__ct__7BWindowF5BRectPCc11window_typeUl
+006970	GL 	.__dt__7BWindowFv
+006988	GL 	.PostMessage__7BLooperFUlP8BHandler
+0069A0	GL 	.__ct__5BViewF5BRectPCcUlUl
+0069B8	GL 	.__dt__5BViewFv
+0069D0	GL 	.__ct__7BButtonF5BRectPCcPCcP8BMessageUl
+0069E8	GL 	.create_sem
+006A00	GL 	.BeginLineArray__5BViewFl
+006A18	GL 	.AddLine__5BViewF6BPoint6BPoint9rgb_colo
+006A30	GL 	.EndLineArray__5BViewFv
+006A48	GL 	.StrokeRect__5BViewF5BRect7pattern
+006A60	GL 	.Bounds__5BViewCFv
+006A78	GL 	.__ct__16BAudioSubscriberFPCc
+006A90	GL 	.__dt__16BAudioSubscriberFv
+006AA8	GL 	.SetStreamBuffers__11BSubscriberFll
+006AC0	GL 	.SetADCSampleInfo__16BAudioSubscriberFll
+006AD8	GL 	.SetSamplingRate__16BAudioSubscriberFl
+006AF0	GL 	.SetDACSampleInfo__16BAudioSubscriberFll
+006B08	GL 	.__unregister_fragment
+006B20	GL 	.__ptr_glue									file = "runtime.c"
+006B34	TI 	@284										file = "Pfft.cpp"
+006B40	TI 	@289
+006B4C	TI 	@361
+006B58	TI 	@370
+006B64	TI 	@294										file = "DomesticViolin.cpp"
+006B70	TI 	@302
+006B7C	TI 	@386
+006B88	TI 	@427
+006B94	TI 	@489
+006BA0	TI 	@516
+006BAC	TI 	@529
+006BB8	TI 	@286										file = "Mangler.cpp"
+006BC4	TI 	@306
+006BD0	TI 	@278										file = "SpecFilter.cpp"
+006BDC	TI 	@302
+006BE8	TI 	@279										file = "Averager.cpp"
+006BF4	TI 	@284
+006C00	TI 	@303
+006C0C	TI 	@310
+006C18	TI 	@303										file = "Analyser.cpp"
+006C24	TI 	@305
+006C30	TI 	@310
+006C3C	TI 	@325
+006C48	TI 	@281										file = "SpecDisplay.cpp"
+006C54	TI 	@316
+006C60	TI 	@319
+006C6C	TI 	@329
+006C78	TI 	@273										file = "SpecBufQueue.cpp"
+006C84	TI 	@283
+006C90	TI 	@288
+006C9C	TI 	@303
+006CA8	TI 	@279										file = "SmallComfort.cpp"
+006CB4	TI 	@294
+006CC0	TI 	@333
+006CCC	TI 	@350
+006CD8	TI 	@390
+006CE4	TI 	@397
+006CF0	TI 	@293										file = "Shample.cpp"
+006CFC	TI 	@299
+006D08	TI 	@304
+006D14	TI 	@337
+006D20	TI 	@275										file = "ShamInstr.cpp"
+006D2C	TI 	@294
+006D38	TI 	@316
+006D44	TI 	@341
+006D50	TI 	@283										file = "Audio.cpp"
+006D5C	TI 	@288
+006D68	TI 	@290
+006D74	TI 	@293
+006D80	TI 	@320
+006D8C	TI 	@324
+006D98	TI 	@329
+006DA4	TI 	@332
+006DB0	TI 	@344
+006DBC	TI 	@346
+006DC8	TI 	@289										file = "KitchenView.cpp"
+006DD4	TI 	@291
+006DE0	TI 	@312
+006DEC	TI 	@315
+006DF8	TI 	@322
+006E04	TI 	@338
+
+Data section, size = 20912 bytes (TOC anchor = 000000)
+000000	TC 	malloc										file = "*Linker-Generated*"
+000004	TC 	mcheck
+000008	TC 	__ct__5BViewF5BRectPCcUlUl
+00000C	TC 	delete_area
+000010	TC 	BeginLineArray__5BViewFl
+000014	TC 	__ct__16BAudioSubscriberFPCc
+000018	TC 	RunFilePanel__12BApplicationFPCcPCcPCcUc
+00001C	TC 	__dl__FPv
+000020	TC 	Lock__7BLooperFv
+000024	TC 	__ct__12BApplicationFUl
+000028	TC 	SetSamplingRate__16BAudioSubscriberFl
+00002C	TC 	__ct__5BFileFv
+000030	TC 	__unregister_fragment
+000034	TC 	Size__5BFileFv
+000038	TC 	clock
+00003C	TC 	FindRef__8BMessageFPCcl
+000040	TC 	SetDACSampleInfo__16BAudioSubscriberFlll
+000044	TC 	Read__5BFileFPvl
+000048	TC 	Seek__5BFileFll
+00004C	TC 	fopen
+000050	TC 	__ct__7BButtonF5BRectPCcPCcP8BMessageUlU
+000054	TC 	SetPulseRate__12BApplicationFd
+000058	TC 	__nw__FUl
+00005C	TC 	create_area
+000060	TC 	Unlock__7BLooperFv
+000064	TC 	__register_fragment
+000068	TC 	find_thread
+00006C	TC 	getenv
+000070	TC 	release_sem
+000074	TC 	__ct__8BMessageFUl
+000078	TC 	EndLineArray__5BViewFv
+00007C	TC 	AddLine__5BViewF6BPoint6BPoint9rgb_color
+000080	TC 	HasRef__8BMessageFPCcl
+000084	TC 	__dt__7BWindowFv
+000088	TC 	strcpy
+00008C	TC 	SetADCSampleInfo__16BAudioSubscriberFlll
+000090	TC 	sprintf
+000094	TC 	__nw__8BMessageFUl
+000098	TC 	MessageReceived__8BHandlerFP8BMessage
+00009C	TC 	acquire_sem
+0000A0	TC 	StrokeRect__5BViewF5BRect7pattern
+0000A4	TC 	Bounds__5BViewCFv
+0000A8	TC 	__dt__5BViewFv
+0000AC	TC 	setbuf
+0000B0	TC 	fprintf
+0000B4	TC 	__dt__16BAudioSubscriberFv
+0000B8	TC 	create_sem
+0000BC	TC 	PostMessage__7BLooperFUlP8BHandler
+0000C0	TC 	free
+0000C4	TC 	SetRef__6BStoreF10record_ref
+0000C8	TC 	exit
+0000CC	TC 	__dt__12BApplicationFv
+0000D0	TC 	SetStreamBuffers__11BSubscriberFll
+0000D4	TC 	__ct__7BWindowF5BRectPCc11window_typeUlU
+0000D8	TC 	delete_sem
+0000DC	TC 	get_area_info
+0000E0	TC 	rand
+0000E4	TC 	CloseFilePanel__12BApplicationFv
+0000E8	TC 	@528										file = "DomesticViolin.cpp"
+0000EC	TC 	@527
+0000F0	TC 	@526
+0000F4	TC 	@525
+0000F8	TC 	@524
+0000FC	TC 	@523
+000100	TC 	@522
+000104	TC 	@521
+000108	TC 	@514
+00010C	TC 	@513
+000110	TC 	@512
+000114	TC 	@497
+000118	TC 	@511
+00011C	TC 	stderr
+000120	TC 	@382
+000124	TC 	@381
+000128	TC 	@380
+00012C	TC 	@379
+000130	TC 	@369
+000134	TC 	@367
+000138	TC 	@363
+00013C	TC 	dbfp
+000140	TC 	stdout
+000144	TC 	__vt__14DomesticViolin
+000148	TC 	LaViol
+00014C	TC 	@283										file = "Mangler.cpp"
+000150	TC 	@282
+000154	TC 	__vt__7Mangler
+000158	TC 	__vt__15SignalGenerator
+00015C	TC 	@298										file = "Analyser.cpp"
+000160	TC 	@297
+000164	TC 	@296
+000168	TC 	__vt__8Analyser
+00016C	TC 	__vt__14SignalReceiver
+000170	TC 	B_SOLID_HIGH								file = "SpecDisplay.cpp"
+000174	TC 	__vt__11SpecDisplay
+000178	TC 	@277
+00017C	TC 	@272										file = "SpecBufQueue.cpp"
+000180	TC 	@271
+000184	TC 	@388										file = "SmallComfort.cpp"
+000188	TC 	@387
+00018C	TC 	@386
+000190	TC 	@385
+000194	TC 	@384
+000198	TC 	@383
+00019C	TC 	@382
+0001A0	TC 	@381
+0001A4	TC 	@380
+0001A8	TC 	@379
+0001AC	TC 	@378
+0001B0	TC 	@278
+0001B4	TC 	@277
+0001B8	TC 	__vt__12SmallComfort
+0001BC	TC 	__vt__14SignalReceiver
+0001C0	TC 	__vt__15SignalGenerator
+0001C4	TC 	@336										file = "Shample.cpp"
+0001C8	TC 	@298
+0001CC	TC 	@297
+0001D0	TC 	@292
+0001D4	TC 	@289
+0001D8	TC 	@288
+0001DC	TC 	@287
+0001E0	TC 	@315										file = "ShamInstr.cpp"
+0001E4	TC 	@274
+0001E8	TC 	@331										file = "Audio.cpp"
+0001EC	TC 	Comp__7AudioInFPvl
+0001F0	TC 	Stream__7AudioInFPvPcl
+0001F4	TC 	__vt__7AudioIn
+0001F8	TC 	@322
+0001FC	TC 	@292
+000200	TC 	Comp__8AudioOutFPvl
+000204	TC 	Stream__8AudioOutFPvPcl
+000208	TC 	__vt__8AudioOut
+00020C	TC 	@280
+000210	TC 	@314										file = "KitchenView.cpp"
+000214	TC 	@310
+000218	TC 	@303
+00021C	TC 	__vt__12BackYardView
+000220	TC 	be_app
+000224	TC 	__vt__13KitchenWindow
+000228	TC 	..atan_table_base.24						file = "libmoto.o"
+00022C	TC 	.errno.26
+000230	TC 	..fwd_small_tails.44
+000234	TC 	sqrt_data.88
+000238	TC 	.trigtab.132
+00023C	TC 	__global_destructor_chain					file = "global_destructor_chain.c"
+000240	TC 	__exception_table_end__						file = "init_term.c"
+000244	TC 	__exception_table_start__
+000248	TC 	__data_end__
+00024C	TC 	__data_start__
+000250	TC 	__code_end__
+000254	TC 	__code_start__
+000258	TC 	@3											file = "start_dyn.c"
+00025C	TC 	__main_thread_id
+000260	TC 	environ
+000264	TC 	argv_save
+000268	TD 	@358										file = "Pfft.cpp"
+000270	TD 	@350
+000278	TD 	@327
+000280	TD 	@326
+000288	TD 	@281
+000290	TD 	@279
+000298	TD 	@364										file = "DomesticViolin.cpp"
+00029A	TD 	@425
+0002A0	TD 	@510
+0002A8	TD 	@426
+0002B0	TD 	@378
+0002B8	TD 	@377
+0002BC	TD 	@376
+0002C0	TD 	@375
+0002C4	TD 	@374
+0002C8	TD 	@373
+0002CC	TD 	@372
+0002D0	TD 	@371
+0002D4	TD 	@370
+0002D8	TD 	@368
+0002DC	TD 	@366
+0002E0	TD 	@365
+0002E4	TD 	@362
+0002E8	TD 	@361
+0002F0	TD 	@360
+0002F8	TD 	@298
+000300	TD 	@296
+000308	TD 	@303										file = "Mangler.cpp"
+000310	TD 	@284
+000318	TD 	@301										file = "SpecFilter.cpp"
+000320	TD 	@287
+000328	TD 	@285
+000330	TD 	@301										file = "Averager.cpp"
+000338	TD 	@277
+000340	TD 	@323										file = "Analyser.cpp"
+000348	TD 	@301
+00034C	TD 	@300
+000350	TD 	@299
+000358	TD 	@315										file = "SpecDisplay.cpp"
+000360	TD 	@313
+000364	TD 	@279
+000368	TD 	@278
+000370	TD 	@317										file = "Shample.cpp"
+000378	TD 	@315
+000380	TD 	@291
+000388	TD 	@290
+000390	TD 	@339										file = "ShamInstr.cpp"
+000398	TD 	@273
+0003A0	TD 	@272
+0003A8	TD 	@314										file = "Audio.cpp"
+0003B0	TD 	@312
+0003B8	TD 	@311
+0003C0	TD 	@281
+0003C8	TD 	@309										file = "KitchenView.cpp"
+0003CC	TD 	@308
+0003D0	TD 	@307
+0003D4	TD 	@306
+0003D8	TD 	@305
+0003DC	TD 	@304
+0003E0	TD 	@302
+0003E4	TD 	@301
+0003E8	TD 	fragmentID									file = "init_term.c"
+0003EC	DS 	__dt__4PfftFv								file = "Pfft.cpp"
+0003F4	DS 	__dt__14DomesticViolinFv					file = "DomesticViolin.cpp"
+0003FC	DS 	MessageReceived__14DomesticViolinFP8BMes
+000404	DS 	RefsReceived__14DomesticViolinFP8BMessag
+00040C	DS 	Pulse__14DomesticViolinFv
+000414	DS 	QuitRequested__14DomesticViolinFv
+00041C	DS 	__cl__7ManglerFP11AudioSignal				file = "Mangler.cpp"
+000424	DS 	__dt__10SpecFilterFv						file = "SpecFilter.cpp"
+00042C	DS 	__dt__8AveragerFv							file = "Averager.cpp"
+000434	DS 	__vc__8AnalyserFP11AudioSignal				file = "Analyser.cpp"
+00043C	DS 	__dt__11SpecDisplayFv						file = "SpecDisplay.cpp"
+000444	DS 	Draw__11SpecDisplayF5BRect
+00044C	DS 	@4@__vc__12SmallComfortFP11AudioSignal		file = "SmallComfort.cpp"
+000454	DS 	__vc__12SmallComfortFP11AudioSignal
+00045C	DS 	__cl__12SmallComfortFP11AudioSignal
+000464	DS 	__dt__7AudioInFv							file = "Audio.cpp"
+00046C	DS 	Comp__7AudioInFPvl
+000474	DS 	Stream__7AudioInFPvPcl
+00047C	DS 	__dt__8AudioOutFv
+000484	DS 	Comp__8AudioOutFPvl
+00048C	DS 	Stream__8AudioOutFPvPcl
+000494	DS 	__dt__13KitchenWindowFv						file = "KitchenView.cpp"
+00049C	DS 	__dt__12BackYardViewFv
+0004A4	DS 	Draw__12BackYardViewF5BRect
+0004AC	DS 	MessageReceived__12BackYardViewFP8BMessa
+0004B4	DS 	QuitRequested__12BackYardViewFv
+0004BC	DS 	QuitRequested__13KitchenWindowFv
+0004C4	DS 	_term_routine_								file = "init_term.c"
+0004CC	DS 	_init_routine_
+0004D4	DS 	__start										file = "start_dyn.c"
+0004DC	TB 	@293										file = "DomesticViolin.cpp"
+0004EE	TB 	@385
+000632	TB 	@488
+000644	TB 	@515
+000672	TB 	@285										file = "Mangler.cpp"
+0006AC	TB 	@278										file = "Averager.cpp"
+0006BE	TB 	@302										file = "Analyser.cpp"
+000768	TB 	@280										file = "SpecDisplay.cpp"
+00077E	TB 	@389										file = "SmallComfort.cpp"
+000790	TB 	@340										file = "ShamInstr.cpp"
+0007A2	TB 	@282										file = "Audio.cpp"
+0007B8	TB 	@323
+0007CE	TB 	@311										file = "KitchenView.cpp"
+000818	RW 	@363										file = "DomesticViolin.cpp"
+00081E	RW 	@367
+00082F	RW 	@369
+000837	RW 	@379
+00083D	RW 	@380
+00084D	RW 	@381
+000852	RW 	@382
+000859	RW 	@497
+000895	RW 	@511
+00089A	RW 	@512
+0008AA	RW 	@513
+0008BB	RW 	@514
+0008C7	RW 	@521
+0008DF	RW 	@522
+0008F2	RW 	@523
+000906	RW 	@524
+00091D	RW 	@525
+000933	RW 	@526
+000954	RW 	@527
+00096D	RW 	@528
+000986	RW 	@530
+000995	RW 	@532
+0009A0	RW 	__RTTI__7BObject
+0009A8	RW 	@533
+0009B1	RW 	@534
+0009C0	RW 	__RTTI__8BHandler
+0009C8	RW 	@535
+0009D0	RW 	@536
+0009E4	RW 	__RTTI__7BLooper
+0009EC	RW 	@537
+0009F9	RW 	@538
+000A18	RW 	__RTTI__12BApplication
+000A20	RW 	@531
+000A44	RW 	__RTTI__14DomesticViolin
+000A4C	RW 	__vt__14DomesticViolin
+000AC8	RW 	@282										file = "Mangler.cpp"
+000AD5	RW 	@283
+000AEB	RW 	@307
+000AF3	RW 	@309
+000B04	RW 	__RTTI__15SignalGenerator
+000B0C	RW 	@308
+000B18	RW 	__RTTI__7Mangler
+000B20	RW 	__vt__7Mangler
+000B2C	RW 	__vt__15SignalGenerator
+000B38	RW 	@296										file = "Analyser.cpp"
+000B41	RW 	@297
+000B57	RW 	@298
+000B60	RW 	@326
+000B69	RW 	@328
+000B78	RW 	__RTTI__14SignalReceiver
+000B80	RW 	@327
+000B8C	RW 	__RTTI__8Analyser
+000B94	RW 	__vt__8Analyser
+000BA0	RW 	__vt__14SignalReceiver
+000BAC	RW 	@277										file = "SpecDisplay.cpp"
+000BB1	RW 	@320
+000BBD	RW 	@322
+000BC8	RW 	__RTTI__7BObject
+000BD0	RW 	@323
+000BD9	RW 	@324
+000BE8	RW 	__RTTI__8BHandler
+000BF0	RW 	@325
+000BF6	RW 	@326
+000C0C	RW 	__RTTI__5BView
+000C14	RW 	@321
+000C30	RW 	__RTTI__11SpecDisplay
+000C38	RW 	__vt__11SpecDisplay
+000CD4	RW 	@271										file = "SpecBufQueue.cpp"
+000CE1	RW 	@272
+000CF7	RW 	@277										file = "SmallComfort.cpp"
+000CFF	RW 	@278
+000D15	RW 	@378
+000D1D	RW 	@379
+000D35	RW 	@380
+000D4A	RW 	@381
+000D5E	RW 	@382
+000D63	RW 	@383
+000D7D	RW 	@384
+000D88	RW 	@385
+000D91	RW 	@386
+000D9A	RW 	@387
+000DB8	RW 	@388
+000DE6	RW 	@399
+000DF3	RW 	@401
+000E04	RW 	__RTTI__15SignalGenerator
+000E0C	RW 	@400
+000E18	RW 	__RTTI__12SmallComfort
+000E20	RW 	__vt__12SmallComfort
+000E3C	RW 	@287										file = "Shample.cpp"
+000E55	RW 	@288
+000E5A	RW 	@289
+000E78	RW 	@292
+000E83	RW 	@297
+000E98	RW 	@298
+000EB0	RW 	@336
+000EBF	RW 	@274										file = "ShamInstr.cpp"
+000ED7	RW 	@315
+000EE4	RW 	@280										file = "Audio.cpp"
+000EED	RW 	@292
+000F0A	RW 	@322
+000F12	RW 	@331
+000F2E	RW 	@348
+000F3A	RW 	@350
+000F44	RW 	__RTTI__7BObject
+000F4C	RW 	@349
+000F58	RW 	__RTTI__11BSubscriber
+000F60	RW 	@351
+000F71	RW 	@352
+000F88	RW 	__RTTI__16BAudioSubscriber
+000F90	RW 	@347
+000FC4	RW 	__RTTI__7AudioIn
+000FCC	RW 	__vt__7AudioIn
+000FE8	RW 	@353
+00101C	RW 	__RTTI__8AudioOut
+001024	RW 	__vt__8AudioOut
+001040	RW 	@303										file = "KitchenView.cpp"
+00104B	RW 	@310
+001050	RW 	@314
+001066	RW 	@323
+001073	RW 	@325
+00107C	RW 	__RTTI__7BObject
+001084	RW 	@326
+00108D	RW 	@327
+00109C	RW 	__RTTI__8BHandler
+0010A4	RW 	@328
+0010AA	RW 	@329
+0010C0	RW 	__RTTI__5BView
+0010C8	RW 	@324
+0010E4	RW 	__RTTI__12BackYardView
+0010EC	RW 	__vt__12BackYardView
+00118C	RW 	@330
+00119A	RW 	@332
+0011A2	RW 	@333
+0011B8	RW 	__RTTI__7BLooper
+0011C0	RW 	@334
+0011C8	RW 	@335
+0011E4	RW 	__RTTI__7BWindow
+0011EC	RW 	@331
+001210	RW 	__RTTI__13KitchenWindow
+001218	RW 	__vt__13KitchenWindow
+0012B8	RW 	@16											file = "libmoto.o"
+004C30	RW 	@40
+004CD0	RW 	@84
+0050F0	RW 	@126
+005190	RW 	@3											file = "start_dyn.c"
+0051A0	RW 	dbfp										file = "DomesticViolin.cpp"
+0051A4	RW 	LaViol
+0051A8	RW 	__global_destructor_chain					file = "global_destructor_chain.c"
+
+Import container "libbe.so"
+Current Version = 00000000, Old Implementation = 00000000
+000000	DS 	SetHighColor__5BViewF9rgb_color
+000001	DS 	SetResizingMode__5BViewFUl
+000002	RW 	environ
+000003	DS 	AttachedToWindow__5BViewFv
+000004	DS 	VolumeUnmounted__12BApplicationFl
+000005	DS 	HandlersRequested__12BApplicationFP8BMessage
+000006	DS 	Minimize__7BWindowFUc
+000007	DS 	malloc
+000008	DS 	ArgvReceived__12BApplicationFiPPc
+000009	DS 	MouseMoved__5BViewF6BPointUlP8BMessage
+00000A	DS 	mcheck
+00000B	DS 	__ct__5BViewF5BRectPCcUlUl
+00000C	DS 	delete_area
+00000D	RW 	be_app
+00000E	DS 	BeginLineArray__5BViewFl
+00000F	DS 	__ct__16BAudioSubscriberFPCc
+000010	DS 	RunFilePanel__12BApplicationFPCcPCcPCcUcP8BMessage
+000011	DS 	AddChild__5BViewFP5BView
+000012	DS 	SetFontName__5BViewFPCc
+000013	DS 	__dl__FPv
+000014	DS 	WorkspaceActivated__7BWindowFlUc
+000015	DS 	Lock__7BLooperFv
+000016	DS 	RemoveCommonFilter__7BLooperFP14BMessageFilter
+000017	RW 	B_SOLID_HIGH
+000018	DS 	FilterMessageDropped__7BWindowFP8BMessage6BPointPP5BView
+000019	DS 	__ct__12BApplicationFUl
+00001A	DS 	SetSamplingRate__16BAudioSubscriberFl
+00001B	DS 	__ct__5BFileFv
+00001C	DS 	Subscribe__11BSubscriberFlP9_sub_infoUc
+00001D	DS 	__unregister_fragment
+00001E	DS 	Size__5BFileFv
+00001F	DS 	SetSymbolSet__5BViewFPCc
+000020	DS 	clock
+000021	DS 	FindRef__8BMessageFPCcl
+000022	DS 	WorkspacesChanged__7BWindowFUlUl
+000023	DS 	SetDACSampleInfo__16BAudioSubscriberFllll
+000024	DS 	FilterMouseDown__7BWindowF6BPointPP5BView
+000025	DS 	task_looper__7BWindowFv
+000026	DS 	SetFontSize__5BViewFf
+000027	RW 	__main_thread_id
+000028	DS 	Read__5BFileFPvl
+000029	DS 	MessageReceived__7BWindowFP8BMessage
+00002A	DS 	Seek__5BFileFll
+00002B	DS 	RemoveChild__5BViewFP5BView
+00002C	DS 	DispatchMessage__7BWindowFP8BMessageP8BHandler
+00002D	DS 	fopen
+00002E	DS 	AddChild__7BWindowFP5BView
+00002F	DS 	WindowActivated__5BViewFUc
+000030	DS 	SetPenSize__5BViewFf
+000031	DS 	__ct__7BButtonF5BRectPCcPCcP8BMessageUlUl
+000032	DS 	MakeFocus__5BViewFUc
+000033	DS 	SaveRequested__7BWindowF10record_refPCc
+000034	DS 	SetPulseRate__12BApplicationFd
+000035	DS 	__nw__FUl
+000036	DS 	create_area
+000037	DS 	Unlock__7BLooperFv
+000038	DS 	FilePanelClosed__12BApplicationFP8BMessage
+000039	DS 	DetachedFromWindow__5BViewFv
+00003A	DS 	__register_fragment
+00003B	DS 	ReadyToRun__12BApplicationFv
+00003C	DS 	find_thread
+00003D	DS 	getenv
+00003E	DS 	ScreenChanged__7BWindowF5BRect11color_space
+00003F	DS 	release_sem
+000040	DS 	MouseDown__5BViewF6BPoint
+000041	DS 	__ct__8BMessageFUl
+000042	DS 	HandlersRequested__5BViewFP8BMessage
+000043	DS 	Unsubscribe__11BSubscriberFv
+000044	DS 	FrameResized__7BWindowFff
+000045	DS 	AddCommonFilter__7BLooperFP14BMessageFilter
+000046	DS 	EndLineArray__5BViewFv
+000047	RW 	errno
+000048	DS 	WindowActivated__7BWindowFUc
+000049	DS 	AddLine__5BViewF6BPoint6BPoint9rgb_color
+00004A	DS 	__dl__8BMessageFPvUl
+00004B	DS 	SetCommonFilterList__7BLooperFP5BList
+00004C	DS 	HasRef__8BMessageFPCcl
+00004D	DS 	__dt__7BWindowFv
+00004E	DS 	Hide__7BWindowFv
+00004F	DS 	Activate__12BApplicationFv
+000050	DS 	Quit__7BWindowFv
+000051	DS 	RemoveChild__7BWindowFP5BView
+000052	DS 	strcpy
+000053	DS 	SetFontRotation__5BViewFf
+000054	RW 	argv_save
+000055	DS 	SetADCSampleInfo__16BAudioSubscriberFllll
+000056	DS 	Show__7BWindowFv
+000057	DS 	AppActivated__12BApplicationFUc
+000058	DS 	sprintf
+000059	DS 	__nw__8BMessageFUl
+00005A	DS 	Pulse__5BViewFv
+00005B	DS 	MenusWillShow__7BWindowFv
+00005C	DS 	MessageReceived__8BHandlerFP8BMessage
+00005D	RW 	stderr
+00005E	DS 	MenusWillShow__12BApplicationFv
+00005F	DS 	acquire_sem
+000060	DS 	Quit__12BApplicationFv
+000061	DS 	StrokeRect__5BViewF5BRect7pattern
+000062	RW 	stdout
+000063	DS 	FrameMoved__7BWindowF6BPoint
+000064	DS 	FilterKeyDown__7BWindowFPUlPP5BView
+000065	DS 	PreferredHandler__7BLooperCFv
+000066	DS 	Bounds__5BViewCFv
+000067	DS 	__dt__5BViewFv
+000068	DS 	Hide__5BViewFv
+000069	DS 	SetFlags__5BViewFUl
+00006A	DS 	VolumeMounted__12BApplicationFl
+00006B	DS 	Show__5BViewFv
+00006C	DS 	Run__7BLooperFv
+00006D	DS 	SetDrawingMode__5BViewF12drawing_mode
+00006E	DS 	SetFontShear__5BViewFf
+00006F	DS 	DispatchMessage__12BApplicationFP8BMessageP8BHandler
+000070	DS 	SavePanelClosed__7BWindowFP8BMessage
+000071	DS 	Zoom__7BWindowF6BPointff
+000072	DS 	ConstrainClippingRegion__5BViewFP7BRegion
+000073	DS 	setbuf
+000074	DS 	HandlersRequested__7BWindowFP8BMessage
+000075	DS 	fprintf
+000076	DS 	SetViewColor__5BViewF9rgb_color
+000077	DS 	__dt__16BAudioSubscriberFv
+000078	DS 	create_sem
+000079	DS 	AllDetached__5BViewFv
+00007A	DS 	PostMessage__7BLooperFUlP8BHandler
+00007B	DS 	free
+00007C	DS 	ExitStream__11BSubscriberFUc
+00007D	DS 	FrameResized__5BViewFff
+00007E	DS 	SetRef__6BStoreF10record_ref
+00007F	DS 	RemoveHandler__7BLooperFP8BHandler
+000080	DS 	exit
+000081	DS 	__dt__12BApplicationFv
+000082	DS 	SetNextHandler__8BHandlerFP8BHandler
+000083	DS 	RemoveFilter__8BHandlerFP14BMessageFilter
+000084	DS 	Run__12BApplicationFv
+000085	DS 	AddHandler__7BLooperFP8BHandler
+000086	DS 	SetStreamBuffers__11BSubscriberFll
+000087	DS 	__ct__7BWindowF5BRectPCc11window_typeUlUl
+000088	DS 	task_looper__7BLooperFv
+000089	DS 	delete_sem
+00008A	DS 	get_area_info
+00008B	DS 	rand
+00008C	DS 	PreferredHandler__7BWindowCFv
+00008D	DS 	FrameMoved__5BViewF6BPoint
+00008E	DS 	KeyDown__5BViewFUl
+00008F	DS 	AboutRequested__12BApplicationFv
+000090	DS 	SetFilterList__8BHandlerFP5BList
+000091	DS 	FilterMouseMoved__7BWindowF6BPointUlP8BMessagePP5BView
+000092	DS 	AddFilter__8BHandlerFP14BMessageFilter
+000093	DS 	CloseFilePanel__12BApplicationFv
+000094	DS 	SetLowColor__5BViewF9rgb_color
+000095	DS 	EnterStream__11BSubscriberFP9_sub_infoUcPvPFPvPcl_UcPFPvl_lUc
+000096	DS 	AllAttached__5BViewFv

@@ -1,0 +1,182 @@
+#include "Audio.h"
+
+#define kAudioBufferSize	8192	// bytes
+#define kNumAudioBuffers	6
+
+
+bool cbb(void *data, char *buf, long size);
+void want_little_b();
+
+bool cbb(void *data, char *buf, long size)
+{
+	long *count = (long *) data;
+	if (size >= 8192)
+		--*count;
+	return (*count > 0);
+}
+
+void want_little_b()
+{
+	long bc = 8;
+	BAudioSubscriber* as = new BAudioSubscriber("");
+	as->Subscribe(B_DAC_STREAM, B_SHARED_SUBSCRIBER_ID, TRUE);
+	as->SetStreamBuffers(8192, bc);
+	as->EnterStream(NULL, TRUE, &bc, cbb, NULL, FALSE);
+	delete as;
+}
+
+AudioOut	*AudioOut::LineOut;
+AudioIn		*AudioIn::LineIn;
+
+AudioOut::AudioOut(SignalGenerator& sigGen):
+	BAudioSubscriber("AudioOut")
+{
+
+#ifdef ARGH
+	want_little_b();	// will cause a glitch
+#endif
+
+	generator = &sigGen;
+	pan = 0;
+	mute = FALSE;
+	LineOut = this;
+	Out.Len = 1024;	
+	vectorsInOutBuf = kAudioBufferSize / (Out.Len * 2 * sizeof(short));
+	
+	long result;
+	result = Subscribe( B_DAC_STREAM,
+							 B_INVISIBLE_SUBSCRIBER_ID, FALSE);
+	result = SetStreamBuffers( kAudioBufferSize,
+										 kNumAudioBuffers);
+
+// send it out in stereo
+	result = SetDACSampleInfo(2, 2,
+							 B_BIG_ENDIAN, B_LINEAR_SAMPLES);
+	result = SetSamplingRate( SAMPLE_OUT_RATE );
+	result = EnterStream(NULL,TRUE,this,
+			&AudioOutStream,&AudioOutComp,TRUE);
+}
+
+
+AudioOut::~AudioOut()
+{
+}
+
+void AudioOut::Stop()
+{
+	ExitStream(TRUE);
+}
+
+long AudioOutComp( void* userData, long error)
+{
+	fprintf(stderr, "exitting out stream: err %d\n", error);
+	return TRUE;
+}
+
+bool AudioOutStream(void *userData, char *buffer, long count)
+{
+	
+	float	ampl, ampr;
+
+	/*
+	 * Synthesize into the buffer that has just completed and set it running
+	 */
+	
+	short *samples = (short*) buffer;
+
+	for(short i=0;i<AudioOut::LineOut->vectorsInOutBuf;i++){
+		if ((ampr = 1.0 + AudioOut::LineOut->pan) < 0)
+			ampr = 0;
+		if ((ampl = 1.0 - AudioOut::LineOut->pan) < 0)
+			ampl = 0;
+
+
+		(*AudioOut::LineOut->generator)
+					(&AudioOut::LineOut->Out);
+
+		for(unsigned long j=0;j<AudioOut::LineOut->Out.Len;j++){
+			if (!AudioOut::LineOut->mute) {
+				samples[2*j]+=ampl*
+					AudioOut::LineOut->Out.Buf[j];
+				samples[2*j+1]+=ampr*
+					AudioOut::LineOut->Out.Buf[j];
+			}
+		}
+		
+		samples+=2*AudioOut::LineOut->Out.Len;
+	}
+	
+	return TRUE; 
+}
+
+
+AudioIn::AudioIn(SignalReceiver& sigRcv):
+	BAudioSubscriber("AudioIn")
+{
+
+#ifdef ARGH
+	want_little_b();	// will cause a glitch
+#endif
+
+	receiver = &sigRcv;
+	LineIn = this;
+	In.Len = 1024;	
+	vectorsInInBuf = kAudioBufferSize / (2 * In.Len * sizeof(short));
+	
+	long result;
+	result = Subscribe( B_ADC_STREAM,
+							 B_INVISIBLE_SUBSCRIBER_ID, FALSE);
+	result = SetStreamBuffers( kAudioBufferSize,
+										 kNumAudioBuffers);
+
+// send it out in stereo
+	result = SetADCSampleInfo(2, 2,
+							 B_BIG_ENDIAN, B_LINEAR_SAMPLES);
+	result = SetSamplingRate( SAMPLE_IN_RATE );
+	result = EnterStream(NULL,TRUE,this,
+			&AudioInStream,&AudioInComp,TRUE);
+}
+
+
+AudioIn::~AudioIn()
+{
+}
+
+long AudioInComp( void* userData, long error)
+{
+	fprintf(stderr, "exitting in stream: err %d\n", error);
+	return TRUE;
+}
+
+bool AudioInStream(void *userData, char *buffer, long count)
+{
+	
+	float	ampl, ampr;
+
+	/*
+	 * Synthesize into the buffer that has just completed and set it running
+	 */
+	
+	short *samples = (short*) buffer;
+
+	for(short i=0;i<AudioIn::LineIn->vectorsInInBuf;i++){
+		for(unsigned long j=0;j<AudioIn::LineIn->In.Len;j++){
+			AudioIn::LineIn->In.Buf[j] = (samples[2*j]/2) +
+										(samples[2*j+1]/2);
+		}
+		
+		(*AudioIn::LineIn->receiver)
+					[&AudioIn::LineIn->In];
+
+		samples+=2*AudioIn::LineIn->In.Len;
+	
+	}
+	
+	return TRUE; 
+}
+
+void AudioIn::Stop()
+{
+	ExitStream(TRUE);
+}
+
